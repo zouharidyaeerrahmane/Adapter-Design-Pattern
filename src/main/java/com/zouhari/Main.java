@@ -2,7 +2,7 @@ package com.zouhari;
 
 
 import com.zouhari.computer.*;
-import com.zouhari.computer.adapter.HdmiDpAdapter;
+import com.zouhari.computer.adapter.DpVgaAdapter;
 import com.zouhari.computer.adapter.HdmiVgaAdapter;
 
 /**
@@ -20,11 +20,17 @@ public class Main {
         uniteCentral.setVGA(new VideoProjecteur());
         uniteCentral.print("Bonjour");
         System.out.println("--------------------------------------------------");
+
         HdmiVgaAdapter hdmiVgaAdapter = new HdmiVgaAdapter();
         hdmiVgaAdapter.setHdmi(new Tv());
         uniteCentral.setVGA(hdmiVgaAdapter);
         uniteCentral.print("Bonjour");
         System.out.println("--------------------------------------------------");
+
+        DpVgaAdapter dpVgaAdapter = new DpVgaAdapter();
+        dpVgaAdapter.setDp(new SuperVP());
+        uniteCentral.setVGA(dpVgaAdapter);
+        uniteCentral.print("Bonjour");
 
 
     }
